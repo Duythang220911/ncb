@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+   <meta charset="UTF-8">
+
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"
+>
+
+<meta name="theme-color" content="#d9f3ff">
+
+<!-- Android / PWA -->
+<link rel="manifest" href="./manifest.json">
+
+<!-- iPhone / iPad -->
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta
+    name="apple-mobile-web-app-status-bar-style"
+    content="default"
+>
+<meta name="apple-mobile-web-app-title" content="NCB Demo">
+
+<link
+    rel="apple-touch-icon"
+    href="./img/app-icon.png"
+>
+
+    <link
+        href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+        rel="stylesheet"
+    >
+
+    <link rel="stylesheet" href="./css/home.css">
+</head>
+
+<body>
+
+<main class="home-page">
+
+    <!-- Nền trang chủ -->
+    <div class="home-background" aria-hidden="true">
+        <span class="background-shape shape-one"></span>
+        <span class="background-shape shape-two"></span>
+        <span class="background-shape shape-three"></span>
+    </div>
+
+
+    <!-- Phần nội dung cuộn -->
+    <div class="home-scroll">
+
+        <!-- Header -->
+        <header class="home-header">
+
+            <h1>Trang chủ</h1>
+
+            <div class="header-actions">
+
+             <button
+    type="button"
+    class="notification-button"
+    aria-label="Thông báo"
+>
+    <img
+        src="./img/icon_bell.png"
+        alt="Thông báo"
+        class="notification-icon-img"
+    >
+</button>
+
+  <button
+    type="button"
+    class="gift-button"
+>
+    <span class="gift-text">Quà tặng</span>
+
+    <span class="gift-icon">
+        <img
+            src="./img/icon_gift.png"
+            alt=""
+            class="gift-icon-img"
+        >
+    </span>
+</button>
+
+            </div>
+
+        </header>
+
+
+        <!-- Số dư -->
+        <section class="balance-section">
+
+            <div class="balance-title-row">
+                <span class="balance-title">
+                    TỔNG SỐ DƯ
+                </span>
+
+                <button
+                    type="button"
+                    class="account-selector"
+                >
+                    <span>01</span>
+                    <i class="bx bxs-right-arrow"></i>
+                </button>
+            </div>
+
+            <div class="balance-value-row">
+
+                <div
+                    class="balance-value is-hidden"
+                    id="balanceValue"
+                    data-balance="25.680.000"
+                >
+                    *** *** VND
+                </div>
+
+                <button
+                    type="button"
+                    class="balance-eye"
+                    id="toggleBalance"
+                    aria-label="Hiện số dư"
+                >
+                    <i class="bx bx-hide"></i>
+                </button>
+
+            </div>
+
+     <button
+    type="button"
+    class="transaction-history-button"
+    id="transactionHistoryButton"
+>
+    <span class="transaction-history-text">
+        Lịch sử giao dịch
+    </span>
+
+    <span class="transaction-history-icon">
+        <img
+            src="./img/icon_receipt.png"
+            alt="Lịch sử giao dịch"
+            class="transaction-history-icon-img"
+        >
+    </span>
+</button>
+
+            <div class="balance-dots" aria-hidden="true">
+                <span class="active"></span>
+                <span></span>
+                <span></span>
+            </div>
+
+        </section>
+
+
+        <!-- Tính năng nhanh -->
+ <!-- Sun -->
+<!-- Tính năng nhanh -->
+<section class="quick-feature-section">
+
+    <div class="quick-feature-grid">
+
+        <!-- Sun Signature -->
+        <button type="button" class="quick-feature-card">
+            <!-- <span class="feature-badge">NEW</span> -->
+
+            <span class="feature-icon">
+                <img
+                    src="./img/icon_sun.png"
+                    alt="Sun Signature"
+                    class="icon-sun"
+                >
+            </span>
+
+            <span class="feature-name">
+                Sun Signature
+            </span>
+        </button>
+
+
+        <!-- Tự động sinh lời -->
+        <button type="button" class="quick-feature-card">
+            <!-- <span class="feature-badge">NEW</span> -->
+
+            <span class="feature-icon">
+                <img
+                    src="./img/icon_wallet.png"
+                    alt="Tự động sinh lời"
+                    class="icon-wallet"
+                >
+            </span>
+
+            <span class="feature-name">
+                Tự động<br>sinh lời
+            </span>
+        </button>
+
+
+        <!-- Tiết kiệm -->
+        <button type="button" class="quick-feature-card">
+
+            <span class="feature-icon">
+                <img
+                    src="./img/icon_saving.png"
+                    alt="Tiết kiệm"
+                    class="icon-saving"
+                >
+            </span>
+
+            <span class="feature-name">
+                Tiết kiệm
+            </span>
+        </button>
+
+
+        <!-- iziShop -->
+        <button type="button" class="quick-feature-card">
+
+            <span class="feature-icon">
+                <img
+                    src="./img/icon_shop.png"
+                    alt="iziShop"
+                    class="icon-shop"
+                >
+            </span>
+
+            <span class="feature-name">
+                iziShop
+            </span>
+        </button>
+
+    </div>
+
+    <button
+        type="button"
+        class="all-features-button"
+    >
+        <span>Tất cả tính năng</span>
+        <i class="bx bx-right-arrow-alt"></i>
+    </button>
+
+</section>
+
+        <!-- Nút chuyển tiền và QR -->
+       <section class="primary-actions">
+
+    <!-- Chuyển tiền -->
+    <button
+        type="button"
+        class="primary-action-button"
+        id="transferButton"
+    >
+
+        <span class="primary-action-icon">
+
+            <img
+                src="./img/icon_transfer.png"
+                alt="Chuyển tiền"
+                class="transfer-icon-img"
+            >
+
+        </span>
+
+        <span>Chuyển tiền</span>
+
+    </button>
+
+
+    <!-- QR -->
+    <button
+        type="button"
+        class="primary-action-button"
+        id="scanQrButton"
+    >
+
+        <span class="primary-action-icon">
+
+            <img
+                src="./img/icon_otp11.png"
+                alt="Quét mã QR"
+                class="qr-icon-img"
+            >
+
+        </span>
+
+        <span>Quét mã QR</span>
+
+    </button>
+
+</section>
+
+
+        <!-- Banner -->
+      <section class="home-banner">
+
+    <img
+        src="./img/home_banner.png"
+        alt="Banner khuyến mãi"
+        class="home-banner-img"
+    >
+
+</section>
+
+
+        <!-- Giao dịch -->
+        <section class="transaction-section">
+            <h2>Giao dịch</h2>
+
+            <div class="transaction-empty">
+                <i class="bx bx-receipt"></i>
+
+                <p>Chưa có giao dịch gần đây</p>
+            </div>
+        </section>
+
+    </div>
+
+
+    <!-- Thanh điều hướng dưới -->
+   <nav class="bottom-navigation">
+
+    <!-- Trang chủ -->
+    <button
+        type="button"
+        class="nav-item active"
+    >
+        <span class="nav-icon">
+            <img
+                src="./img/icon_home1.png"
+                alt="Trang chủ"
+                class="nav-home-img"
+            >
+        </span>
+
+        <span class="gift-text1">Trang chủ</span>
+      
+    </button>
+
+
+    <!-- Tài khoản -->
+    <button
+        type="button"
+        class="nav-item"
+    >
+        <span class="nav-icon">
+            <img
+                src="./img/icon_account1.png"
+                alt="Tài khoản"
+                class="nav-account-img"
+            >
+        </span>
+
+        <span  class="gift-text1">Tài khoản</span>
+    </button>
+
+
+    <!-- QR -->
+    <button
+        type="button"
+        class="nav-item qr-nav-item"
+        aria-label="Quét mã QR"
+    >
+
+        <span class="qr-nav-circle">
+
+            <img
+                src="./img/icon_qr_nav.png"
+                alt="QR"
+                class="nav-qr-img"
+            >
+
+        </span>
+
+    </button>
+
+
+    <!-- Dịch vụ thẻ -->
+    <button
+        type="button"
+        class="nav-item"
+    >
+        <span class="nav-icon">
+            <img
+                src="./img/icon_card.png"
+                alt="Dịch vụ thẻ"
+                class="nav-card-img"
+            >
+        </span>
+
+        <span  class="gift-text1" >Dịch vụ thẻ</span>
+    </button>
+
+
+    <!-- Cài đặt -->
+    <button
+        type="button"
+        class="nav-item"
+    >
+        <span class="nav-icon">
+            <img
+                src="./img/icon_setting.png"
+                alt="Cài đặt"
+                class="nav-setting-img"
+            >
+        </span>
+
+        <span  class="gift-text1">Cài đặt</span>
+    </button>
+
+</nav>
+
+</main>
+
+<script src="./js/home.js"></script>
+<script src="./js/pwa.js"></script>
+</body>
+</html>

@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1, viewport-fit=cover"
+    >
+
+    <meta name="theme-color" content="#ffffff">
+
+    <title>Lịch sử giao dịch</title>
+
+    <link
+        href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+        rel="stylesheet"
+    >
+
+    <link
+        rel="stylesheet"
+        href="./css/history.css"
+    >
+</head>
+
+<body>
+
+<main class="history-page">
+
+    <header class="history-header">
+
+        <button
+            type="button"
+            class="back-button"
+            id="backButton"
+            aria-label="Quay lại"
+        >
+            <i class="bx bx-left-arrow-alt"></i>
+        </button>
+
+        <div class="history-title">
+            <h1>Lịch sử giao dịch</h1>
+            <p>Tài khoản IZI</p>
+        </div>
+
+    </header>
+
+
+    <section class="history-controls">
+
+        <label class="search-box">
+            <input
+                type="search"
+                id="transactionSearch"
+                placeholder="Tìm kiếm giao dịch"
+                autocomplete="off"
+            >
+
+            <i class="bx bx-search"></i>
+        </label>
+
+
+        <div class="filter-grid">
+
+            <button
+                type="button"
+                class="filter-select"
+                id="typeFilterButton"
+            >
+                <span id="typeFilterText">Tất cả</span>
+                <i class="bx bxs-down-arrow"></i>
+            </button>
+
+            <button
+                type="button"
+                class="filter-select"
+                id="accountFilterButton"
+            >
+                <span>Tài khoản IZI</span>
+                <i class="bx bxs-down-arrow"></i>
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <section class="available-balance-card">
+
+        <p>TỔNG SỐ DƯ KHẢ DỤNG</p>
+
+        <div class="available-balance-row">
+
+            <strong
+                id="availableBalance"
+                data-balance="35.556"
+            >
+                *** *** <span>VND</span>
+            </strong>
+
+            <button
+                type="button"
+                class="show-balance-button"
+                id="showBalanceButton"
+            >
+                <i class="bx bxs-show"></i>
+                <span>Hiện</span>
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <section class="month-card">
+
+        <div class="month-header">
+
+            <h2>Tháng 07/2026</h2>
+
+            <button
+                type="button"
+                class="collapse-button"
+                id="collapseButton"
+            >
+                Thu gọn
+            </button>
+
+        </div>
+
+
+        <div class="month-summary">
+
+            <div class="summary-item">
+                <p>
+                    TỔNG THU
+                    <span class="count-badge">03</span>
+                </p>
+
+                <strong class="income-total">
+                    <span>+</span>175.554 <small>VND</small>
+                </strong>
+            </div>
+
+            <div class="summary-item summary-expense">
+                <p>
+                    TỔNG CHI
+                    <span class="count-badge">02</span>
+                </p>
+
+                <strong class="expense-total">
+                    <span>-</span>119.999 <small>VND</small>
+                </strong>
+            </div>
+
+        </div>
+
+
+        <div class="month-divider"></div>
+
+
+        <div class="transaction-tabs">
+
+            <button
+                type="button"
+                class="transaction-tab active"
+                data-filter="all"
+            >
+                Tất cả
+            </button>
+
+            <button
+                type="button"
+                class="transaction-tab"
+                data-filter="income"
+            >
+                Thu
+            </button>
+
+            <button
+                type="button"
+                class="transaction-tab"
+                data-filter="expense"
+            >
+                Chi
+            </button>
+
+        </div>
+
+
+        <div
+            class="transaction-list-wrapper"
+            id="transactionListWrapper"
+        >
+            <h3>HÔM QUA</h3>
+
+            <div class="transaction-list" id="transactionList">
+
+                <article
+    class="transaction-item"
+    data-type="income"
+    data-search="biến động 55555"
+    data-detail-url="./transaction-detail.html"
+    role="button"
+    tabindex="0"
+    aria-label="Xem chi tiết giao dịch nhận 55,555 VND"
+>
+   <span class="transaction-icon income-icon">
+
+    <img
+        src="./img/icon_income.png"
+        alt="Nhận tiền"
+        class="income-transaction-icon-img"
+    >
+
+</span>
+                                    <!-- Đây là nhận  -->
+    <div class="transaction-info">
+        <strong>Biến động</strong>
+        <small>23:54, 14/07/2026</small>
+    </div>
+
+    <div class="transaction-amount income">
+        <strong>
+            <span>+</span> 55,555
+            <small>VND</small>
+        </strong>
+    </div>
+</article>
+
+                                <!-- Đây là trừ  -->
+                            <article
+    class="transaction-item"
+    data-type="income"
+    data-search="biến động 55555"
+    data-detail-url="./transaction+detail.html"
+    role="button"
+    tabindex="0"
+    aria-label="Xem chi tiết giao dịch nhận 55,555 VND"
+>
+     
+
+                       <span class="transaction-icon expense-icon">
+
+    <img
+        src="./img/icon_income1.png"
+        alt="Nhận tiền"
+        class="income-transaction-icon-img1"
+    >
+
+</span>
+                                    <!-- Đây là nhận  -->
+    <div class="transaction-info">
+        <strong>NGUYEN VAN THUONG</strong>
+        <small>23:54, 14/07/2026</small>
+    </div>
+
+    <div class="transaction-amount expense">
+        <strong>
+            <span>-</span> 55,555
+            <small>VND</small>
+        </strong>
+    </div>
+</article>
+
+
+                      <article
+    class="transaction-item"
+    data-type="income"
+    data-search="biến động 55555"
+    data-detail-url="./transaction+detail.html"
+    role="button"
+    tabindex="0"
+    aria-label="Xem chi tiết giao dịch nhận 55,555 VND"
+>
+   <span class="transaction-icon income-icon">
+
+    <img
+        src="./img/icon_income.png"
+        alt="Nhận tiền"
+        class="income-transaction-icon-img"
+    >
+
+</span>
+                                    <!-- Đây là nhận  -->
+    <div class="transaction-info">
+        <strong>Biến động</strong>
+        <small>23:54, 14/07/2026</small>
+    </div>
+
+    <div class="transaction-amount income">
+        <strong>
+            <span>+</span> 55,555
+            <small>VND</small>
+        </strong>
+    </div>
+</article>
+
+                                  <article
+    class="transaction-item"
+    data-type="income"
+    data-search="biến động 55555"
+    data-detail-url="./transaction+detail1.html"
+    role="button"
+    tabindex="0"
+    aria-label="Xem chi tiết giao dịch nhận 55,555 VND"
+>
+     
+
+                       <span class="transaction-icon expense-icon">
+
+    <img
+        src="./img/icon_income1.png"
+        alt="Nhận tiền"
+        class="income-transaction-icon-img1"
+    >
+
+</span>
+                                    <!-- Đây là nhận  -->
+    <div class="transaction-info">
+        <strong>NGUYEN VAN THUONG</strong>
+        <small>23:54, 14/07/2026</small>
+    </div>
+
+    <div class="transaction-amount expense">
+        <strong>
+            <span>-</span> 55,555
+            <small>VND</small>
+        </strong>
+    </div>
+</article>
+                            <article
+    class="transaction-item"
+    data-type="income"
+    data-search="biến động 55555"
+    data-detail-url="./transaction+detail1.html"
+    role="button"
+    tabindex="0"
+    aria-label="Xem chi tiết giao dịch nhận 55,555 VND"
+>
+     
+
+                       <span class="transaction-icon expense-icon">
+
+    <img
+        src="./img/icon_income1.png"
+        alt="Nhận tiền"
+        class="income-transaction-icon-img1"
+    >
+
+</span>
+                                    <!-- Đây là nhận  -->
+    <div class="transaction-info">
+        <strong>NGUYEN VAN THUONG</strong>
+        <small>23:54, 14/07/2026</small>
+    </div>
+
+    <div class="transaction-amount expense">
+        <strong>
+            <span>-</span> 55,555
+            <small>VND</small>
+        </strong>
+    </div>
+</article>
+
+                            <article
+    class="transaction-item"
+    data-type="income"
+    data-search="biến động 55555"
+    data-detail-url="./transaction+detail.html"
+    role="button"
+    tabindex="0"
+    aria-label="Xem chi tiết giao dịch nhận 55,555 VND"
+>
+     
+
+                       <span class="transaction-icon expense-icon">
+
+    <img
+        src="./img/icon_income1.png"
+        alt="Nhận tiền"
+        class="income-transaction-icon-img1"
+    >
+
+</span>
+                                    <!-- Đây là nhận  -->
+    <div class="transaction-info">
+        <strong>NGUYEN VAN THUONG</strong>
+        <small>23:54, 14/07/2026</small>
+    </div>
+
+    <div class="transaction-amount expense">
+        <strong>
+            <span>-</span> 55,555
+            <small>VND</small>
+        </strong>
+    </div>
+</article>
+
+
+            </div>
+
+            <p
+                class="empty-message"
+                id="emptyMessage"
+                hidden
+            >
+                Không tìm thấy giao dịch
+            </p>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<!-- Menu chọn loại giao dịch -->
+<div
+    class="filter-overlay"
+    id="filterOverlay"
+></div>
+
+<section
+    class="filter-sheet"
+    id="filterSheet"
+    aria-hidden="true"
+>
+    <div class="filter-sheet-header">
+        <h2>Loại giao dịch</h2>
+
+        <button
+            type="button"
+            id="closeFilterSheet"
+            aria-label="Đóng"
+        >
+            <i class="bx bx-x"></i>
+        </button>
+    </div>
+
+    <button
+        type="button"
+        class="filter-option"
+        data-value="all"
+        data-label="Tất cả"
+    >
+        Tất cả
+    </button>
+
+    <button
+        type="button"
+        class="filter-option"
+        data-value="income"
+        data-label="Thu"
+    >
+        Giao dịch thu
+    </button>
+
+    <button
+        type="button"
+        class="filter-option"
+        data-value="expense"
+        data-label="Chi"
+    >
+        Giao dịch chi
+    </button>
+</section>
+
+
+<script src="./js/history.js"></script>
+
+</body>
+</html>
