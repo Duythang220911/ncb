@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+ <meta charset="UTF-8">
+
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"
+>
+
+<meta name="theme-color" content="#d9f3ff">
+
+<!-- Android / PWA -->
+<link rel="manifest" href="./manifest.json">
+
+<!-- iPhone / iPad -->
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta
+    name="apple-mobile-web-app-status-bar-style"
+    content="default"
+>
+<meta name="apple-mobile-web-app-title" content="NCB Demo">
+
+<link
+    rel="apple-touch-icon"
+    href="./img/app-icon.png"
+>
+
+    <!-- Boxicons -->
+    <link
+        href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+        rel="stylesheet"
+    >
+
+    <link rel="stylesheet" href="./css/index.css">
+</head>
+
+<body>
+
+<main class="login-page">
+
+    <!-- Phần trên -->
+    <header class="top-header">
+
+        <div class="welcome-section">
+
+            <div class="user-avatar">
+                <img
+                    src="./img/ncb_logo.png"
+                    alt="NCB"
+                >
+            </div>
+
+            <div class="welcome-content">
+                <h1>Xin chào,</h1>
+
+                <p>
+                    <strong>HOANG DUY THANG!</strong>
+                    <span>Chào mừng quay lại.</span>
+                </p>
+            </div>
+
+        </div>
+
+        <div class="header-actions">
+
+            <button
+                type="button"
+                class="header-action-button"
+                aria-label="Thông báo"
+            >
+                <i class="bx bxs-bell"></i>
+
+                <span class="notification-dot"></span>
+            </button>
+
+            <button
+                type="button"
+                class="header-action-button more-button"
+                aria-label="Xem thêm"
+            >
+                <i class="bx bx-dots-horizontal-rounded"></i>
+            </button>
+
+        </div>
+
+    </header>
+
+
+    <!-- Slider -->
+    <section class="banner-slider" aria-label="Khuyến mãi">
+
+        <div class="banner-track" id="bannerTrack">
+
+            <article class="banner-slide">
+                <img
+                    src="./img/banner_1.jpg"
+                    alt="Ưu đãi NCB 1"
+                >
+            </article>
+
+            <article class="banner-slide">
+                <img
+                    src="./img/banner_2.jpg"
+                    alt="Ưu đãi NCB 2"
+                >
+            </article>
+
+            <article class="banner-slide">
+                <img
+                    src="./img/banner_3.jpg"
+                    alt="Ưu đãi NCB 3"
+                >
+            </article>
+
+        </div>
+
+    </section>
+
+
+    <!-- Các nút thao tác -->
+    <section class="login-actions">
+
+        <button
+            type="button"
+            class="action-button login-button"
+            id="loginButton"
+        >
+            Đăng nhập ngay
+        </button>
+
+        <button
+            type="button"
+            class="action-button qr-button"
+            id="qrButton"
+        >
+            <span class="qr-icon">
+                <i class="bx bx-qr-scan"></i>
+            </span>
+
+            <span>Quét mã QR</span>
+        </button>
+
+    </section>
+
+
+    <!-- Mở tài khoản -->
+    <button
+        type="button"
+        class="open-account-button"
+        id="openAccountButton"
+    >
+        Mở tài khoản
+    </button>
+
+</main>
+<!-- Lớp nền tối -->
+<div class="login-overlay" id="loginOverlay"></div>
+
+<!-- Bottom sheet đăng nhập -->
+<section
+    class="login-sheet"
+    id="loginSheet"
+    aria-hidden="true"
+    aria-labelledby="loginSheetTitle"
+>
+    <div class="login-sheet-handle"></div>
+
+    <div class="login-sheet-header">
+        <h2 id="loginSheetTitle">Đăng nhập</h2>
+
+        <button
+            type="button"
+            class="login-sheet-close"
+            id="closeLoginSheet"
+            aria-label="Đóng"
+        >
+            <i class="bx bx-x"></i>
+        </button>
+    </div>
+
+    <div class="login-sheet-divider"></div>
+
+    <div class="login-sheet-content">
+        <p class="login-sheet-label">
+            Chọn phương thức đăng nhập khác
+        </p>
+
+        <!-- Nhập mật khẩu -->
+        <button
+            type="button"
+            class="login-option"
+            id="passwordLoginOption"
+        >
+            <span class="login-option-icon password-icon">
+                <i class="bx bx-key"></i>
+            </span>
+
+            <span class="login-option-text">
+                <strong>Nhập mật khẩu</strong>
+
+                <small>
+                    Nhập tên đăng nhập và mật khẩu để truy cập
+                    tài khoản của bạn.
+                </small>
+            </span>
+
+            <span class="login-option-arrow">
+                <i class="bx bx-right-arrow-alt"></i>
+            </span>
+        </button>
+
+        <!-- Đăng nhập bằng OTP -->
+        <button
+            type="button"
+            class="login-option"
+            id="otpLoginOption"
+        >
+            <span class="login-option-icon otp-icon">
+                <i class="bx bx-message-rounded-dots"></i>
+            </span>
+
+            <span class="login-option-text">
+                <strong>Đăng nhập bằng OTP</strong>
+
+                <small>
+                    Sử dụng xác thực sinh trắc học và OTP để đăng nhập
+                    vào tài khoản của bạn.
+                </small>
+            </span>
+
+            <span class="login-option-arrow">
+                <i class="bx bx-right-arrow-alt"></i>
+            </span>
+        </button>
+    </div>
+</section>
+<script src="./js/index.js"></script>
+<script src="./js/pwa.js"></script>
+</body>
+</html>

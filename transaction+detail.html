@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1, viewport-fit=cover"
+    >
+
+    <meta name="theme-color" content="#ffffff">
+
+    <title>Chi tiết giao dịch</title>
+
+    <link
+        href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+        rel="stylesheet"
+    >
+
+    <link
+        rel="stylesheet"
+        href="./css/transaction+detail.css"
+    >
+</head>
+
+<body>
+
+<main class="transaction-detail-page">
+
+    <!-- Header -->
+    <header class="detail-header">
+
+        <button
+            type="button"
+            class="detail-back-button"
+            id="detailBackButton"
+            aria-label="Quay lại"
+        >
+            <i class="bx bx-left-arrow-alt"></i>
+        </button>
+
+        <h1>Chi tiết giao dịch</h1>
+
+        <span class="header-placeholder"></span>
+
+    </header>
+
+
+    <!-- Trạng thái giao dịch -->
+    <section class="transaction-hero">
+
+        <div class="transaction-status-icon">
+            <span class="status-box"></span>
+
+           <i class="bx bx-up-arrow-alt"></i>
+        </div>
+
+        <p class="transaction-type">Nhận tiền</p>
+
+        <div class="transaction-main-amount">
+            <span class="amount-sign">-</span>
+
+            <strong>55,555</strong>
+
+            <span class="amount-currency">VND</span>
+        </div>
+
+        <div class="transaction-action-buttons">
+
+            <button
+                type="button"
+                class="detail-action-button"
+                id="downloadButton"
+            >
+                <i class="bx bx-download"></i>
+                <span>Tải xuống</span>
+            </button>
+
+            <button
+                type="button"
+                class="detail-action-button"
+                id="shareButton"
+            >
+                <i class="bx bx-upload"></i>
+                <span>Chia sẻ</span>
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- Gửi đến -->
+    <section class="detail-section">
+
+        <h2>GỬI ĐẾN</h2>
+
+        <div class="detail-card">
+
+            <div class="detail-row">
+                <span>Bên thụ hưởng</span>
+                <strong>HOANG DUY THANG</strong>
+            </div>
+
+            <div class="detail-row">
+                <span>Số tài khoản</span>
+                <strong>103390522693</strong>
+            </div>
+
+            <div class="detail-row">
+                <span>Thời gian</span>
+                <strong>23:54, 14/07/2026</strong>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Từ -->
+    <section class="detail-section">
+
+        <h2>TỪ</h2>
+
+        <div class="detail-card">
+
+            <div class="detail-row">
+                <span>Tên tài khoản</span>
+                <strong>HOANG DUY THANG</strong>
+            </div>
+
+            <div class="detail-row">
+                <span>Ngân hàng</span>
+                <strong>NHTMCP Quan Doi</strong>
+            </div>
+
+            <div class="detail-row">
+                <span>Số tài khoản</span>
+                <strong>787866686</strong>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Thông tin chung -->
+    <section class="detail-section">
+
+        <h2>THÔNG TIN CHUNG</h2>
+
+        <div class="detail-card">
+
+            <div class="detail-row">
+                <span>Phương thức thanh toán</span>
+                <strong>Biến động</strong>
+            </div>
+
+            <div class="detail-row detail-content-row">
+                <span>Nội dung</span>
+
+                <strong>
+                    HOANG DUY THANG chuyen tien
+                </strong>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Nút quay lại -->
+    <button
+        type="button"
+        class="bottom-back-button"
+        id="bottomBackButton"
+    >
+        Quay lại
+    </button>
+
+</main>
+
+
+<!-- Toast -->
+<div
+    class="detail-toast"
+    id="detailToast"
+    role="status"
+    aria-live="polite"
+></div>
+
+
+<script src="./js/transaction-detail.js"></script>
+
+</body>
+</html>
